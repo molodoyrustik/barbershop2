@@ -4,21 +4,9 @@
   -moz-box-shadow: $params;
 }
 
-%clearfix {
-  &:after {
-    content: "";
-    display: block;
-    clear: both;
-  }
-}
-
 @mixin inline-block($valign: top) {
   display: inline-block;
   vertical-align: $valign;
-}
-
-@mixin malina() {
-  font-family: 'als_malinaregular';
 }
 
 @mixin ptSans($typeArial: regular) {
@@ -26,5 +14,71 @@
     font-family: 'PT Sans Narrow';
   } @else if $typeArial == bold {
     font-family: 'PT Sans Narrow Bold';
+  }
+}
+
+// @mixin desktop {
+//   @media screen and (max-width: 1200px) {
+//     @content;
+//   }
+// }
+
+// @mixin laptop {
+//   @media screen and (max-width: 992px) {
+//     @content;
+//   }
+// }
+
+// @mixin tablets {
+//   @media screen and (max-width: 768px) {
+//     @content;
+//   }
+// }
+
+// @mixin phones {
+//   @media screen and (max-width: 480px) {
+//     @content;
+//   }
+// }
+
+// mobile first
+// .container{
+//   width: 280px; // либо auto если макет резиновый
+//   margin: 0 auto;
+//   padding: 0 20px; // не забываем про отступы контента от краев
+
+//   @include tablet { // от 768px планшетная версия
+//     width: 640px; // либо auto если макет резиновый
+//     padding: 0 64px; // не забываем про отступы контента от краев
+//     background-color: red;
+//   }
+//   @include desktop { // от 1200px планшетная версия
+//     width: 960px; // на desktop контент обычно фиксированной ширины
+//     padding: 0 120px;
+//     background-color: green;
+//   }
+// }
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    @content;
+  }
+}
+
+@mixin retina3 {
+  @media (min-resolution: 3dppx) {
+    @content;
   }
 }

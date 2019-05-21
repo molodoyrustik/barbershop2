@@ -1,9 +1,9 @@
 // variables
-$white: #f6f6f6;
-$blue: #33c1e3;
-$red: #e85f61;
-$gray: #727272;
-$dark-gray: #414141;
+$footer-height: 190px;
+$container-width: 940px;
+$bg-darkgrey: #292929;
+$bg-lightgrey: #f8f5f2;
+$mobile-width-only: 767px;
 
 // layout
 @import "_misc/fonts";
@@ -11,16 +11,10 @@ $dark-gray: #414141;
 @import "_misc/normalize";
 @import "_misc/adjustment";
 
-// styles
-@import "common/header";
-@import "common/navigation";
-@import "common/breadcrumbs";
-@import "common/modal";
-@import "common/button";
-@import "common/footer";
+// blocks
+@import "blocks/page-header";
+@import "blocks/main-nav";
+@import "blocks/site-list";
+@import "blocks/user-list";
+@import "blocks/stats";
 
-// pages
-@import "pages/index";
-@import "pages/price";
-@import "pages/shop";
-@import "pages/item";
